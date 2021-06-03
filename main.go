@@ -21,9 +21,10 @@ func main() {
 	}
 
 	fmt.Println("------------- SDL INITIALIZED 🌱 -----------")
-
+	fmt.Println(" -> Creating window 🌏 ..............")
+ 
 	window, err := sdl.CreateWindow(
-		"Gaming in go",
+		"Space Shooter 🌠",
 		sdl.WINDOWPOS_UNDEFINED,
 		sdl.WINDOWPOS_UNDEFINED,
 		screenWidth,
@@ -35,13 +36,17 @@ func main() {
 		fmt.Println("Error initializing window 🛑: ", err)
 		return
 	}
+	fmt.Println("------------- WINDOW CREATED 🌱 -----------")
 
 	defer window.Destroy()
 
+	fmt.Println(" -> Creating renderer 🌏 ..............")
 	renderer, err := 	sdl.CreateRenderer(window, -1, sdl.RENDERER_ACCELERATED)
 	if err != nil {
 		fmt.Println("Error initializing renderer 🛑: ", err)
 		return
 	}
+	fmt.Println("------------- RENDERER CREATED 🌱 -----------")
+
 	defer renderer.Destroy()
 }
